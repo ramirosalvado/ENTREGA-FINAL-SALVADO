@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Coches</title>
+</head>
+<body>
+    <h1>Lista de Coches</h1>
+    <ul>
+        {% for coche in coches %}
+            <li><a href="{% url 'ver_coche' coche.id %}">{{ coche.modelo }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <!-- Formulario de búsqueda -->
+    <form method="GET" action="{% url 'buscar_coches' %}">
+        <input type="text" name="q" placeholder="Buscar coches">
+        <button type="submit">Buscar</button>
+    </form>
+</body>
+</html>
+
+
